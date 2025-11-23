@@ -68,7 +68,7 @@ ${z}`}class tt extends Error{constructor({message:a,code:r,cause:l,name:u}){var 
         .soroban-container .soroban { transform: scale(1.45); transform-origin: center; }
         .flash-area { flex: 1; display: flex; justify-content: center; align-items: center; text-align: center; width: 100%; overflow: hidden; }
         
-        /* Text Sizes */
+        /* Text Sizes (Default) */
         .flash-token { font-size: clamp(6rem, 15vw, 10rem); font-weight: 900; color: #4d79ff; line-height: 1; }
         .flash-op { margin-right: 0.1em; color: #aaa; font-size: 0.6em; }
         .flash-qmark { font-size: clamp(8rem, 20vw, 15rem); color: #ef4444; font-weight: 900; }
@@ -101,13 +101,13 @@ ${z}`}class tt extends Error{constructor({message:a,code:r,cause:l,name:u}){var 
         
         /* --- MOBILE LANDSCAPE FIX (Screens like your phone) --- */
         @media (max-height: 600px) and (orientation: landscape) {
-            /* 1. Increase Soroban size */
+            /* 1. Increase Soroban size (Requested 0.95) */
             .soroban-container .soroban { transform: scale(0.95); }
             
-            /* 2. Wider panel */
+            /* 2. Make the quiz panel narrower to give space to soroban */
             .quiz-panel { width: 280px; padding: 0.5rem; }
 
-            /* 3. COMPACT Numpad */
+            /* 3. Compact Numpad & Controls */
             .bottom-controls { gap: 2px; }
             .numpad-grid { gap: 2px; }
             .num-btn { padding: 0; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; height: 28px; border-radius: 8px; border-width: 1px; }
@@ -115,12 +115,12 @@ ${z}`}class tt extends Error{constructor({message:a,code:r,cause:l,name:u}){var 
             .answer-box { font-size: 1.3rem; border-radius: 8px; border-width: 2px; }
             .send-btn { font-size: 1rem; padding: 0 1rem; border-radius: 8px; }
 
-            /* 4. INCREASED Visuals (Bigger than before) */
-            .flash-area { flex-grow: 1; max-height: 65vh; display: flex; align-items: center; justify-content: center; }
-            .flash-token { font-size: clamp(8rem, 25vh, 12rem); line-height: 1; }
-            .flash-qmark { font-size: clamp(10rem, 30vh, 14rem); }
-            .feedback-icon { font-size: clamp(10rem, 30vh, 14rem); }
-            .correct-answer-text { font-size: clamp(2rem, 8vh, 4rem); margin-top: 0; }
+            /* 4. MAXIMIZED Visuals */
+            .flash-area { flex-grow: 1; max-height: 55vh; display: flex; align-items: center; justify-content: center; }
+            .flash-token { font-size: 25vh; line-height: 1; }
+            .flash-qmark { font-size: 25vh; }
+            .feedback-icon { font-size: 25vh; }
+            .correct-answer-text { font-size: 5vh; margin-top: 0; }
             
             .status-row { font-size: 0.85rem; margin-bottom: 2px; }
             .top-bar { margin-bottom: 2px; }
@@ -130,20 +130,22 @@ ${z}`}class tt extends Error{constructor({message:a,code:r,cause:l,name:u}){var 
         /* === PORTRAIT MODE (COMPACT + HUGE NUMBERS) === */
         @media (max-aspect-ratio: 1/1) { 
             .soroban-container { display: none !important; } 
-            .quiz-panel { width: 100vw !important; max-width: 100vw !important; border-radius: 0; padding: 1rem; } 
+            .quiz-panel { width: 100vw !important; max-width: 100vw !important; border-radius: 0; padding: 0.5rem; } 
             
             /* Squeezed Numpad */
-            .bottom-controls { gap: 5px; margin-top: auto; } 
-            .numpad-grid { gap: 5px; }
-            .num-btn { padding: 0; height: 55px; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; } 
-            .input-row { height: 55px; } 
+            .bottom-controls { gap: 4px; margin-top: auto; } 
+            .numpad-grid { gap: 4px; height: auto; }
+            .num-btn { padding: 0; height: 55px; font-size: 1.4rem; border-radius: 12px; display: flex; align-items: center; justify-content: center; } 
+            .input-row { height: 50px; gap: 5px; }
+            .answer-box { font-size: 1.6rem; border-radius: 12px; }
+            .send-btn { font-size: 1.2rem; border-radius: 12px; }
             
             /* MASSIVE Numbers */
             .flash-area { flex-grow: 1; display: flex; align-items: center; justify-content: center; }
-            .flash-token { font-size: clamp(15rem, 30vh, 28rem); line-height: 1; } 
-            .flash-qmark { font-size: clamp(18rem, 35vh, 30rem); } 
-            .feedback-icon { font-size: clamp(18rem, 35vh, 30rem); } 
-            .correct-answer-text { font-size: clamp(4rem, 8vh, 6rem); }
-            .static-question { font-size: clamp(5rem, 18vw, 10rem); } 
+            .flash-token { font-size: clamp(10rem, 55vw, 25rem); line-height: 1; } 
+            .flash-qmark { font-size: clamp(12rem, 60vw, 30rem); } 
+            .feedback-icon { font-size: clamp(12rem, 60vw, 30rem); } 
+            .correct-answer-text { font-size: clamp(3rem, 10vh, 5rem); }
+            .static-question { font-size: clamp(4rem, 20vw, 12rem); } 
         }
       `}),_.jsx("audio",{ref:Y=>Be.current.sound1=Y,src:Gv}),_.jsx("audio",{ref:Y=>Be.current.sound2=Y,src:Vv}),_.jsx("audio",{ref:Y=>Be.current.tick=Y,src:zS}),_.jsx("audio",{ref:Y=>Be.current.go=Y,src:DS}),_.jsx("audio",{ref:Y=>Be.current.correct=Y,src:MS}),_.jsx("audio",{ref:Y=>Be.current.wrong=Y,src:LS}),_.jsx("audio",{ref:Y=>Be.current.applause=Y,src:BS}),_.jsx("audio",{ref:Y=>Be.current.losing=Y,src:qS}),_.jsx("div",{ref:dt,className:"rain-sparkle",style:{display:"none"}}),d==="start"&&_.jsx("div",{id:"startPanel",style:{display:"flex"},children:_.jsxs("div",{className:"start-card",children:[_.jsxs("div",{className:`abacus-mascot ${me?"mascot-bounce-in":""}`,id:"mainMascot",children:[_.jsxs("div",{className:"abacus-body",children:[_.jsx("div",{className:"abacus-rod"}),_.jsxs("div",{className:"abacus-beads",children:[_.jsx("div",{className:"abacus-bead"}),_.jsx("div",{className:"abacus-bead"}),_.jsx("div",{className:"abacus-bead"}),_.jsx("div",{className:"abacus-bead"})]}),_.jsx("div",{className:"abacus-rod"})]}),_.jsxs("div",{className:"mascot-face",children:[_.jsx("div",{className:"eyes",children:_.jsx("div",{className:"eye"})}),_.jsx("div",{className:"smile"}),_.jsx("div",{className:"cheek"}),_.jsx("div",{className:"cheek right"})]})]}),_.jsx("div",{className:"start-title",children:l.appTitle}),_.jsx("button",{className:"start-btn",onClick:Ht,children:l.startQuiz}),_.jsxs("button",{className:"start-settings-btn",onClick:()=>v("settings"),children:[l.settings," ⚙️"]}),_.jsx("div",{className:"confetti",ref:bt}),_.jsxs("button",{style:{marginTop:"1rem",background:"transparent",border:"none",color:"#668cff",fontWeight:"bold",cursor:"pointer"},onClick:T,children:["← ",l.backHome]})]})}),d==="quiz"&&_.jsxs("div",{className:"quiz-panel",children:[_.jsxs("div",{className:"top-bar",children:[_.jsxs("button",{className:"back-pill",onClick:T,children:[_.jsx("span",{children:"←"})," ",l.backHome]}),_.jsxs("div",{style:{display:"flex",gap:"8px"},children:[_.jsx("button",{className:"icon-btn",onClick:()=>v("settings"),children:"⚙️"}),_.jsx("button",{className:"icon-btn",onClick:G,children:"↻"}),_.jsx("button",{className:"icon-btn",onClick:Z,children:"⛶"})]})]}),_.jsxs("div",{className:"status-row",children:[_.jsxs("div",{style:{background:"#668cff",color:"#fff",padding:"4px 14px",borderRadius:"12px",fontWeight:"bold"},children:["Q",y]}),_.jsxs("div",{style:{display:"flex",alignItems:"center",gap:"6px",color:"#668cff",fontWeight:"bold",fontSize:"1.2rem"},children:[_.jsxs("svg",{width:"22",height:"22",viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2.5",strokeLinecap:"round",strokeLinejoin:"round",children:[_.jsx("circle",{cx:"12",cy:"12",r:"10"}),_.jsx("polyline",{points:"12 6 12 12 16 14"})]}),L]})]}),_.jsx("div",{className:"flash-area",children:E}),_.jsxs("div",{className:"bottom-controls",children:[_.jsxs("div",{className:"input-row",children:[_.jsx("div",{className:"answer-box",children:O}),_.jsx("button",{className:"send-btn",onClick:Oe,disabled:A||!O,children:l.send})]}),_.jsx("div",{className:"numpad-grid",children:["1","2","3","4","5","6","7","8","9","C","0","BACK"].map(Y=>_.jsx("button",{className:"num-btn",onClick:()=>ze(Y),children:Y==="BACK"?"⌫":Y},Y))})]})]}),_.jsx("div",{className:"soroban-container",children:_.jsx(kS,{ref:B})}),d==="settings"&&_.jsx("div",{id:"settingsPanel",style:{display:"flex"},children:_.jsxs("div",{className:"settings-card",children:[_.jsx("h2",{style:{color:"#4d79ff",marginBottom:"1rem"},children:l.settings}),_.jsxs("label",{children:[l.questions,":",_.jsx("input",{type:"number",min:"1",max:"50",value:he.numQuestions,onChange:Y=>Ne({...he,numQuestions:Number(Y.target.value)})})]}),_.jsxs("label",{children:[l.speed,":",_.jsx("select",{value:he.flashSpeed,onChange:Y=>Ne({...he,flashSpeed:Number(Y.target.value)}),children:[1,2,3,4,5].map(Y=>_.jsx("option",{value:Y,children:Y},Y))})]}),_.jsxs("label",{children:[l.flash,":",_.jsx("input",{type:"checkbox",checked:he.flashEnabled,onChange:Y=>Ne({...he,flashEnabled:Y.target.checked})})]}),_.jsxs("label",{children:[l.dictation,":",_.jsx("input",{type:"checkbox",checked:he.dictation,onChange:Y=>Ne({...he,dictation:Y.target.checked})})]}),_.jsxs("label",{children:[l.timer,":",_.jsx("select",{value:he.timerMinutes,onChange:Y=>Ne({...he,timerMinutes:Number(Y.target.value)}),children:Array.from({length:60},(Y,ee)=>ee+1).map(Y=>_.jsx("option",{value:Y,children:Y},Y))})]}),_.jsxs("div",{className:"settings-actions",children:[_.jsx("button",{onClick:()=>v(le.current.questions.length>0?"quiz":"start"),children:l.cancel}),_.jsx("button",{onClick:()=>Ht(),children:l.save})]})]})}),(d==="results"||d==="timeup")&&_.jsx("div",{id:d==="timeup"?"timeUpPanel":"resultsPanel",style:{display:"flex"},children:_.jsxs("div",{className:"results-card",children:[_.jsxs("div",{className:`abacus-mascot ${me?"mascot-bounce-in":""}`,children:[_.jsxs("div",{className:"abacus-body",children:[_.jsx("div",{className:"abacus-rod"}),_.jsxs("div",{className:"abacus-beads",children:[_.jsx("div",{className:"abacus-bead"}),_.jsx("div",{className:"abacus-bead"}),_.jsx("div",{className:"abacus-bead"}),_.jsx("div",{className:"abacus-bead"})]}),_.jsx("div",{className:"abacus-rod"})]}),_.jsxs("div",{className:"mascot-face",children:[_.jsx("div",{className:"eyes",children:_.jsx("div",{className:"eye"})}),_.jsx("div",{className:"smile"}),_.jsx("div",{className:"cheek"}),_.jsx("div",{className:"cheek right"})]})]}),_.jsx("h2",{style:{color:d==="timeup"?"#fd90d7":"#4d79ff",textAlign:"center",fontSize:"2rem",fontWeight:"800"},children:d==="timeup"?l.timesUp:P.includes(`/${le.current.questions.length}`)&&P.startsWith(`You scored ${le.current.questions.length}`)?l.perfect:l.results}),_.jsx("div",{className:"results-row",style:{width:"100%",overflowY:"auto",maxHeight:"200px"},children:I.map((Y,ee)=>_.jsxs("div",{className:"result-item",children:[_.jsxs("div",{className:"question-text",children:["Q",ee+1,": ",Y.question]}),_.jsxs("div",{className:"your-answer",children:[_.jsx("span",{className:"mark",children:Y.user===Y.correct?"✅":"❌"}),_.jsxs("span",{children:["Your: ",Y.user]})]})]},ee))}),_.jsx("div",{style:{fontSize:"1.5rem",fontWeight:"bold",color:"#668cff",margin:"10px 0"},children:P}),_.jsxs("div",{className:"results-footer",children:[_.jsxs("button",{onClick:()=>Ht(),children:["↺ ",l.tryAgain]}),_.jsx("button",{className:"back-pill",onClick:T,children:l.backHome})]})]})})]})}function $S(){const s=Da();return _.jsx("div",{className:"app-root",children:_.jsxs("div",{className:"card",children:[_.jsx("h2",{children:"404"}),_.jsx("p",{children:"Page not found."}),_.jsx("button",{className:"primary",onClick:()=>s("/"),children:"Go Home"})]})})}function Ng({children:s}){const[a,r]=j.useState(null),[l,u]=j.useState(!0),c=en();return j.useEffect(()=>{sa.auth.getSession().then(({data:m})=>{r(m.session),u(!1)});const{data:h}=sa.auth.onAuthStateChange((m,d)=>{r(d),u(!1)});return()=>h.subscription.unsubscribe()},[]),l?null:a?s:_.jsx(db,{to:"/login",replace:!0,state:{from:c}})}function GS(){return _.jsxs(gb,{children:[_.jsx(jr,{path:"/login",element:_.jsx(wS,{})}),_.jsx(jr,{path:"/",element:_.jsx(Ng,{children:_.jsx(jS,{})})}),_.jsx(jr,{path:"/quiz",element:_.jsx(Ng,{children:_.jsx(HS,{})})}),_.jsx(jr,{path:"*",element:_.jsx($S,{})})]})}E0.createRoot(document.getElementById("root")).render(_.jsx(g0.StrictMode,{children:_.jsx(Wb,{children:_.jsx(qb,{children:_.jsx(GS,{})})})}));
